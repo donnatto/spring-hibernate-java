@@ -62,4 +62,8 @@ public class ClientService {
     public Client findByIdentification(String id) {
         return clientRepository.findByCliIdentification(id);
     }
+
+    public List<Client> findAll() {
+        return clientRepository.findAll();
+    }
 }
