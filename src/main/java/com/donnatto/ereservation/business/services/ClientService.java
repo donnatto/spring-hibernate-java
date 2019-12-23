@@ -3,6 +3,7 @@ package com.donnatto.ereservation.business.services;
 import com.donnatto.ereservation.business.repository.ClientRepository;
 import com.donnatto.ereservation.model.Client;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -11,6 +12,7 @@ import java.util.List;
  * @author donnatto
  */
 @Service
+@Transactional(readOnly = true)
 public class ClientService {
 
     private final ClientRepository clientRepository;
@@ -24,6 +26,7 @@ public class ClientService {
      * @param client
      * @return
      */
+    @Transactional
     public Client create(Client client) {
         return clientRepository.save(client);
     }
@@ -33,6 +36,7 @@ public class ClientService {
      * @param client
      * @return
      */
+    @Transactional
     public Client update(Client client) {
         return clientRepository.save(client);
     }
@@ -41,6 +45,7 @@ public class ClientService {
      * method to delete a client from the DB
      * @param client
      */
+    @Transactional
     public void delete(Client client) {
         clientRepository.delete(client);
     }
