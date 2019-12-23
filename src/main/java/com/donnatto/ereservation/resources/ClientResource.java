@@ -31,7 +31,7 @@ public class ClientResource {
 
     @PostMapping
     @ApiOperation(value = "Create client", notes = "Service to create a new client")
-    @ApiResponses(value = {@ApiResponse(code = 201, message = "Client created succesfully"), @ApiResponse(code = 400, message = "Invalid request")})
+    @ApiResponses(value = {@ApiResponse(code = 201, message = "Client created successfully"), @ApiResponse(code = 400, message = "Invalid request")})
     public ResponseEntity<Client> createClient(@RequestBody ClientVO clientVo) {
         Client client = new Client();
         client.setCliIdentification(clientVo.getCliIdentification());
@@ -45,7 +45,7 @@ public class ClientResource {
 
     @PutMapping("/{id}")
     @ApiOperation(value = "Update client", notes = "Service to update a client")
-    @ApiResponses(value = {@ApiResponse(code = 201, message = "Client updated succesfully"), @ApiResponse(code = 404, message = "Client not found")})
+    @ApiResponses(value = {@ApiResponse(code = 201, message = "Client updated successfully"), @ApiResponse(code = 404, message = "Client not found")})
     public ResponseEntity<Client> updateClient(@PathVariable("id") String id, @RequestBody ClientVO clientVo) {
         Client client = clientService.findByIdentification(id);
         if (client == null) {
@@ -62,7 +62,7 @@ public class ClientResource {
 
     @DeleteMapping("/{id}")
     @ApiOperation(value = "Delete client", notes = "Service to delete a client")
-    @ApiResponses(value = {@ApiResponse(code = 201, message = "Client deleted succesfully"), @ApiResponse(code = 404, message = "Client not found")})
+    @ApiResponses(value = {@ApiResponse(code = 201, message = "Client deleted successfully"), @ApiResponse(code = 404, message = "Client not found")})
     public void removeClient(@PathVariable("id") String id) {
         Client client = clientService.findByIdentification("id");
         if (client != null) {
