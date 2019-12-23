@@ -58,4 +58,8 @@ public class ClientService {
     public List<Client> findByLastName(String lastName) {
         return clientRepository.findByCliLastName(lastName);
     }
+
+    public Client findByIdentification(String id) {
+        return clientRepository.findByCliIdentification(id);
+    }
 }

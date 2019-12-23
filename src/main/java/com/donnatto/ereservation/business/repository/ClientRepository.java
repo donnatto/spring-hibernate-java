@@ -18,4 +18,10 @@ public interface ClientRepository extends JpaRepository<Client, String> {
      */
     public List<Client> findByCliLastName(String cliLastName);
 
+    /**
+     * Method to find a client by identification
+     * @param identification
+     * @return
+     */
+    public Client findByCliIdentification(String identification);
 }
